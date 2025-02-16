@@ -73,15 +73,24 @@ The "central nervous system" tissue will be utlised for GBM drug repurposig in t
 The Drug2Cell matrix is constructed by calculating the average gene expression for each drug's target group in each cell and adjusting for background expression by subtracting baseline biases. This is an R implementation of the Drug2Cell Python pipeline designed by Kanemaru et al. (PMID: 37438528).
 ```
 gene_info <- read.table(file = "DrugReference/central-nervous-system_gene_info.txt", sep="\t", header = T, quote = "")
-gene_list <- Reduce(intersect, list("seurat" = rownames(dat@assays["RNA"]$RNA), "drug" = gene_info$Gene.Symbol))
+gene_list <- Reduce(intersect,
+                    list("seurat" = rownames(dat@assays["RNA"]$RNA),
+                         "drug" = gene_info$Gene.Symbol))
 
 dir.create("results", showWarnings = FALSE)
-d2c_mat <- build_drug_target_d2c(dat, gene_list = gene_list, drug_target_df = cns_drug_targets, out_path = "results")
+d2c_mat <- build_drug_target_d2c(dat,
+                                 gene_list = gene_list,
+                                 drug_target_df = cns_drug_targets,
+                                 out_path = "results")
 ```
 ### 3. Estimate drug promotion/inhibition effects
 Each drug's promotion/inhibition effect on each cell type is calculated by comparing scores derived from control and diseased cells using within-cell-type Wilcoxon rank-sum test, and adjusted for multiple comparisons using the Benjamini-Hochberg procedure.
 ```
-drug_prom_inh_weight <- compute_drug_prom_inh(dat, d2c_mat, disease = disease, out_type = "weight", out_path = "results")
+drug_prom_inh_weight <- compute_drug_prom_inh(dat,
+                                              d2c_mat = d2c_mat,
+                                              disease = disease,
+                                              out_type = "weight",
+                                              out_path = "results")
 ```
 ### 4. Identify intra-cell-type differentially expressed genes (DEGs)
 This step processes each cell type individually, performs statistical testing to find markers, and stores the results (log fold change and adjusted p-values) for each cell type in a list.
