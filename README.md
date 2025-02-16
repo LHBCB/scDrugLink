@@ -22,3 +22,16 @@ devtools::install_github("lhbcb/scDrugLink")
 ```
 
 ## Quick start
+### 1. Load disease scRNA-seq data and prepare drug targets and perturbation signatures
+
+### 2. Build Drug2Cell matrix based on drug targets
+
+### 3. Estimate drug promotion/inhibition effects
+
+### 4. Identify intra-cell-type differentially expressed genes (DEGs)
+
+### 5. Estimate drug sensitivity/resistance effects
+
+### 6. Compute final drug therapeutic score
+
+### 7. Evaluate drug repurposing performance (optional)
