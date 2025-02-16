@@ -20,6 +20,10 @@ Then install scDrugLink
 ```
 devtools::install_github("lhbcb/scDrugLink")
 ```
+Load scDrugLink
+```
+library(scDrugLink)
+```
 
 ## Tutorial
 ### 1. Load disease scRNA-seq data and prepare drug targets and perturbation signatures
@@ -41,7 +45,6 @@ dat <- subset(seurat_obj_subset, cell_type %in% remain_cell_types)
 ```
 The drug targets can be sourced as follows: first download the complete dataset of drugs from DrugBank’s releases (available in XML format at https://go.drugbank.com/releases); then, use an XML parser (such as the xml2 package in R) to extract the text data, and apply keyword or pattern matching techniques to identify the gene targets for each drug. In our study, we have prepared the targets for 273 drugs effective in the CNS tissue, directly accessible in the `scDrugLink` package.
 ```
-library(scDrugLink)
 head(cns_drug_targets)
 #    drug_name
 #1      Biotin
