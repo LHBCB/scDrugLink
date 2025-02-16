@@ -1,0 +1,18 @@
+Package: scDrugLink
+Title: Single-Cell Drug Repurposing via Computationally Linking Drug Targets and Perturbation Signatures
+Version: 0.0.1
+Authors: Li Huang, Xu Lu, Dongsheng Chen
+Maintainer: Li Huang <hl@ism.cams.cn>
+Description: scDrugLink integrates a single-cell RNA-seq disease atlas with drug targets and perturbation signatures to improve repurposing outcomes both at the cell-type level and the whole-atlas level.
+Imports:
+    Asgard,
+    Seurat,
+    cmapR,
+    effsize
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a license
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Depends: 
+    R (>= 3.5)
+LazyData: true
