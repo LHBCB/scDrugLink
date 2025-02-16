@@ -25,6 +25,7 @@ devtools::install_github("lhbcb/scDrugLink")
 ### 1. Load disease scRNA-seq data and prepare drug targets and perturbation signatures
 Here, we take drug repurposing for GBM as an example to demonstrate the steps required to reproduce the results for the disease in the scDrugLink paper. The disease scRNA-seq data can be downloaded from GliomaAtlas (https://gbmvisium.snu.ac.kr/seuratObjects/); two GBM patient samples (SNU24 and SNU25) and one control sample (SNU57normal) are used as the GBM dataset for our study. 
 ```
+library(Seurat)
 seurat_obj <- readRDS("gbm.rds")
 disease <- "GBM" # the disease condition
 control <- "control" # the control condition
@@ -40,6 +41,7 @@ dat <- subset(seurat_obj_subset, cell_type %in% remain_cell_types)
 ```
 The drug targets can be sourced as follows: first download the complete dataset of drugs from DrugBank’s releases (available in XML format at https://go.drugbank.com/releases); then, use an XML parser (such as the xml2 package in R) to extract the text data, and apply keyword or pattern matching techniques to identify the gene targets for each drug. In our study, we have prepared the targets for 273 drugs effective in the CNS tissue, directly accessible in the `scDrugLink` package.
 ```
+library(scDrugLink)
 head(cns_drug_targets)
 #    drug_name
 #1      Biotin
