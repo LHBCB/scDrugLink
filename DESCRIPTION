@@ -9,7 +9,7 @@ Imports:
     Seurat,
     cmapR,
     effsize
-License: PolyForm Noncommercial License 1.0.0
+License: PolyForm Noncommercial
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
