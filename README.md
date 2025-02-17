@@ -92,7 +92,7 @@ d2c_mat <- build_drug_target_d2c(dat,
                                  out_path = "results")
 ```
 ### 3. Estimate drug promotion/inhibition effects
-Each drug's promotion/inhibition effect on each cell type is calculated by comparing scores derived from control and diseased cells using within-cell-type Wilcoxon rank-sum test, and adjusted for multiple comparisons using the Benjamini-Hochberg procedure.
+Each drug's promotion/inhibition effect on each cell type is calculated by integrating Cliff's Delta and adjusted p-value derived from control and diseased cells using within-cell-type Wilcoxon rank-sum test.
 ```
 drug_prom_inh_weight <- compute_drug_prom_inh(dat,
                                               d2c_mat = d2c_mat,
