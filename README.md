@@ -192,6 +192,6 @@ cell_type_drug_score[1:6, 1:6]
 To repurpose drugs for GBM, rank the drugs by their therapeutic scores, with higher scores indicating a greater likelihood of having an effect on the disease.
 
 ### Citation
-> Huang, L., Lu, X., Chen, D. scDrugLink: Single-Cell Drug Repurposing for CNS Diseases via Computationally Linking Drug Targets and Perturbation Signatures. 2025.
+> Huang, L., Lu, X., Chen, D. scDrugLink: Single-Cell Drug Repurposing for CNS Diseases via Computationally Linking Drug Targets and Perturbation Signatures. IEEE Journal of Biomedical and Health Informatics, 2025, doi: 10.1109/JBHI.2025.3552536.
 ### Acknowledgement
 We thank He et al. for their `Asgard` package (https://github.com/lanagarmire/Asgard), which helps prepare drug perturbation signatures and forms the basis for estimating drug sensitivity/resistance effects.
